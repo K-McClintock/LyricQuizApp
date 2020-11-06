@@ -2,23 +2,27 @@
 <html lang="en">
 
 <head>
-    <title>Lyrics Quiz: The Credits</title>
+    <title>Lyrics Quiz: The Eighties</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="css/quiz.css" rel="stylesheet">
+    <link href="css/tens.css" rel="stylesheet">
     <!-- <link rel="stylesheet" href="lib/fontawesome/css/all.css"> -->
     <script src="https://kit.fontawesome.com/ad4b4bec12.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Rammetto+One&family=Roboto:wght@400;700&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rammetto+One&family=Princess+Sofia&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
-    <div id="container" class="containbg">
+    <div id="container" class="tens">
         <nav class="navbar navbar-expand-xs navbar-dark bg-dark sticky-top py-0 txtoutline">
             <a class="navbar-brand" href="menu.html"><i class="fas fa-music"></i> LT</a>
-            <span class="where">Choose Decade</span>
+            <span class="score-span">Score:
+                <span id="scoreboard">0</span>
+            </span>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -39,22 +43,48 @@
             </div>
         </nav>
 
-        <main id="menu" class="menu-container mt-2 justify-content-center">
-            <div class="row">
-                <div class="col-11 col-lg-8 col-xl-6 m-auto px-0">
-                    <div id="decade-buttons" class="dec-grid">
-                        <a href="sixties.html" class="btn btn-primary btn-lg dec-btn txtoutline">60's</a>
-                        <a href="seventies.html" class="btn btn-primary btn-lg dec-btn txtoutline">70's</a>
-                        <a href="eighties.html" class="btn btn-primary btn-lg dec-btn txtoutline">80's</a>
-                        <a href="nineties.html" class="btn btn-primary btn-lg dec-btn txtoutline">90's</a>
-                        <a href="aughts.html" class="btn btn-primary btn-lg dec-btn txtoutline" disabled>00's</a>
-                        <a href="tens.html" class="btn btn-primary btn-lg dec-btn txtoutline" disabled>10's</a>
+        <main class="menu-container mt-2 justify-content-center">
+            <section>
+                <div class="quizselect"></div>
+                <div id="question-container" class="hide">
+                    <div id="question" class=" p-1 pl-2 p-xl-3 mx-auto mb-2 m-xl-4">Question</div>
+                    <div id="answer-buttons" class="btn-grid m-xl-4">
+                        <button class="btn p-1 p-xl-p3 mx-auto m-xl-4">Answer 1</button>
+                        <button class="btn p-1 p-xl-p3 mx-auto m-xl-4">Answer 2</button>
+                        <button class="btn p-1 p-xl-p3 mx-auto m-xl-4">Answer 3</button>
+                        <!-- <button class="btn p-1 p-xl-p3 mx-auto m-xl-4">Answer 4</button> -->
                     </div>
-
                 </div>
-        </main>
+                <div class="controls">
+                    <button id="start-btn" class="start-btn btn m-2 m-xl-4">Start</button>
+                    <button id="next-btn" class="next-btn btn hide m-2 m-xl-4">next</button>
+                    <button id="tally-btn" class="tally-btn btn hide m-2 m-xl-4">next</button>
+                </div>
+                <div class="row justify-content-center">
+                    <div id="show-board" class="hide">
+                        <div class="col-12 col-xl-6">
+                            <p class="tallyP">Score:</p>
+                            <p id="final-score"></p>
+                        </div>
+                        <div class="col-12 col-xl-6">
+                            <p class="tallyP">Rank:</p>
+                            <p id="grade"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="moving-on" class="row justify-content-center">
+                    <button id="dec-select" class="dec-slct-btn btn hide m-2 m-xl-4"></button>
+                    <button id="try-btn" class="try-btn btn hide m-2 m-xl-4"></button>
+                </div>
     </div>
 
+    </section>
+
+    </main>
+
+
+    </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -64,6 +94,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
+    <script src="scripts/tens.js"></script>
 </body>
 
 </html>
