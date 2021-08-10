@@ -2,99 +2,76 @@
 <html lang="en">
 
 <head>
-    <title>Lyrics Quiz: The Seventies</title>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link href="css/quiz.css" rel="stylesheet">
-    <link href="css/seventies.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="lib/fontawesome/css/all.css"> -->
-    <script src="https://kit.fontawesome.com/ad4b4bec12.js" crossorigin="anonymous"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Rammetto+One&family=Ranchers&family=Roboto:wght@400;500;700&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title>Traversing the Verses: the 1970's</title>
 </head>
 
 <body>
-    <div id="container" class="seventies">
-        <nav class="navbar navbar-expand-xs navbar-dark bg-dark sticky-top py-0 txtoutline">
-            <a class="navbar-brand" href="menu.html"><i class="fas fa-music"></i> LT</a>
-            <span class="score-span">Score:
-                <span id="scoreboard">0</span>
-            </span>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="decades.html">Choose Decade <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="howto.html">How to Play</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="version.html">Version History</a>
-                    </li>
-                </ul>
+    <div class="app-container seventies-BG">
+        <header>
+            <div class="brand">
+                <a href="menu.html">
+                    <img src="images/TtV-cassette-brand.svg" class="brand">
+                </a>
             </div>
-        </nav>
+            <div class="seventies big-font">the 1970's</div>
+            <div class="exit big-font">&times</div>
+        </header>
 
-        <main class="menu-container mt-2 justify-content-center">
-            <section>
-                <div class="quizselect"></div>
-                <div id="question-container" class="hide">
-                    <div id="question" class=" p-1 pl-2 p-xl-3 mx-auto mb-2 m-xl-4">Question</div>
-                    <div id="answer-buttons" class="btn-grid m-xl-4">
-                        <button class="btn p-1 p-xl-p3 mx-auto m-xl-4">Answer 1</button>
-                        <button class="btn p-1 p-xl-p3 mx-auto m-xl-4">Answer 2</button>
-                        <button class="btn p-1 p-xl-p3 mx-auto m-xl-4">Answer 3</button>
-                        <!-- <button class="btn p-1 p-xl-p3 mx-auto m-xl-4">Answer 4</button> -->
+        <main class="center">
+            <div class="how-to card">
+                How to play: Select the song title that matches the lyric given! Every question is worth one point.
+            </div>
+            <div id="quiz-container" class="hide">
+                <div id="question-container" class="card hide">
+                    <div class="count">Question #<span></span> of 10</div>
+                    <div id="question" class="question">    
+                        <!-- question from js goes here -->
                     </div>
                 </div>
-                <div class="controls">
-                    <button id="start-btn" class="start-btn btn m-2 m-xl-4">Start</button>
-                    <button id="next-btn" class="next-btn btn hide m-2 m-xl-4">next</button>
-                    <button id="tally-btn" class="tally-btn btn hide m-2 m-xl-4">next</button>
+                
+                <div id="answer-buttons" class="menu-grid">
+                    <!-- 4 answer buttons generated from js go here -->
                 </div>
-                <div class="row justify-content-center">
-                    <div id="show-board" class="hide">
-                        <div class="col-12 col-xl-6">
-                            <p class="tallyP">Score:</p>
-                            <p id="final-score"></p>
-                        </div>
-                        <div class="col-12 col-xl-6">
-                            <p class="tallyP">Rank:</p>
-                            <p id="grade"></p>
-                        </div>
+            </div>
+            <div class="controls">
+                <button id="start-btn" class="btn seventies ctrl-btn">Start Game</button>
+                <button id="next-btn" class="btn seventies ctrl-btn hide">Next Question</button>
+                <button id="score-btn" class="btn seventies ctrl-btn hide">Score Me!</button>
+            </div>
+            <div id="scoreboard" class="seventies">
+                <div class="scoreboard card hide">
+                    <p>Score:</p>
+                    <p id="final-score" class="big-hero-font">10 / 10</p>
+                </div>
+                <div class="scoreboard card hide">
+                    <p>Rank:</p>
+                    <p id="ranking" class="big-hero-font">Legend!</p>
+                </div>
+            </div>
+            <div class="end-game-controls">
+                <button id="menu-btn" class="btn seventies ctrl-btn hide">New Decade!</button>
+                <button id="try-again-btn" class="btn seventies ctrl-btn hide">Try again!</button>
+            </div>
+            <div id="modal" class="modal hide">
+                <div class="seventies card exit-window">
+                    <div class="exit big-font">&times</div>
+                    <p class="big-hero-font">Are you sure you want to exit?</p>
+                    <div class="menu-grid">
+                        <button class="btn yes correct">Yes</button>
+                        <button class="btn no wrong">No</button>
                     </div>
                 </div>
-
-                <div id="moving-on" class="row justify-content-center">
-                    <button id="dec-select" class="dec-slct-btn btn hide m-2 m-md-4"></button>
-                    <button id="try-btn" class="try-btn btn hide m-2 m-md-4"></button>
-                </div>
+                
+            </div>
+        </main>
+        <footer></footer>
+        
     </div>
 
-    </section>
-
-    </main>
-
-
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
     <script src="scripts/seventies.js"></script>
 </body>
-
 </html>
