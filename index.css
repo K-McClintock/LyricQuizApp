@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Zen+Dots&family=Princess+Sofia&family=Ranchers&family=Roboto:wght@400;700&family=Spicy+Rice&family=Titan+One&family=Yellowtail&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FF3CAC;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    border-radius: 2%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85vw;
+    height: 40px;
+    padding: 0px 2px;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 85vw;
+    height: 85vh;
+    overflow-y: auto;
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+}
+
+.how-to {
+    text-align: center;
+}
+
+/* change this with media query-min-width 1024px---------- */
+.btn {
+    width: 250px;
+    height: 50px;
+    margin: 0px 5px;
+    padding: 8px 15px 12px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,.2);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    cursor: pointer;
+}
+/* ------------------------------------------------------- */
+
+.btn:hover {
+    background-color: rgb(85,136,60);
+    color: white;
+}
+
+/* change with media query-min-width 1024px--------------- */
+.ctrl-btn {
+    font-size: 1.5rem;
+    letter-spacing: 1.5px;
+    margin: 5px;
+}
+/* ------------------------------------------------------- */
+
+/* #letters path:hover {
+    fill: rgb(0, 128, 0);
+    color: white;
+} */
+
+.logo {
+    max-width: 75vw;
+    max-height: 75vh
+}
+
+img.brand {
+    width: 50px;
+    height: 40px;
+    padding: 0 2px;
+    border-radius: 2px;
+}
+
+/* change this with media query-min-width 640px----------- */
+.menu-grid {
+    display: grid;
+    justify-content: center;
+    gap: 25px;
+    margin: 10px;
+}
+/* ------------------------------------------------------- */
+
+/* change this with medis query-min-width 1024px---------- */
+.big-font {
+    font-size: 1.75rem;
+    letter-spacing: 1px;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+/* ------------------------------------------------------- */
+
+/* decade specific classes-------------------------------- */
+.sixties {
+    font-family: 'Spicy Rice', sans-serif;
+}
+
+.sixties-BG {
+    background: center url("images/sixties-faux-pucci.jpg");
+    background-size: cover;
+}
+
+.seventies {
+    font-family: 'Ranchers', sans-serif;
+    /* letter-spacing: 1px; */
+}
+
+.seventies-BG {
+    background-color: rgb(232, 175, 104);
+    background: center url("images/seventies-color-angle.jpg");
+    background-size: cover;
+}
+
+.eighties {
+    font-family: 'Zen Dots', sans-serif;
+}
+
+.eighties-BG {
+    background-color: rgb(61, 20, 76);
+    background: center url("images/eighties-lasergrid.jpg");
+    background-size: cover;
+}
+
+.nineties {
+    font-family: 'Anton', sans-serif;
+}
+
+.nineties span {
+    font-family: 'Yellowtail', sans-serif;
+    font-size: 1.25rem;
+}
+
+.nineties-BG {
+    background: center url("images/nineties-terrible.jpg");
+    background-size: cover;
+}
+
+.aughts {
+    font-family: 'Titan One', sans-serif;
+}
+
+.aughts-BG {
+    background-color: rgb(255, 192, 203);
+    background: center url("images/aughts-Y2K.jpg");
+    background-size: cover;
+}
+
+.tens {
+    font-family: 'Princess Sofia', sans-serif;
+    font-weight: bold;
+    
+}
+
+.tens-BG {
+    background-color: rgb(0, 250, 154);
+    background: center url("images/tens-headphones.jpg");
+    background-size: cover;
+}
+/* ------------------------------------------------------- */
+
+.credits li{
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    padding: 5px;
+    list-style-type: none;
+}
+
+#lyric-copyright li{
+    font-size: .8rem;
+}
+
+.card {
+    background-color: rgba(255,255,255, .9);
+    margin: 5px 0px;
+    padding: 10px 5px;
+    border-radius: 5px;
+    width: 75vw;
+    max-width: 75vw;
+}
+
+#quiz-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.count {
+    font-family: 'Roboto', sans-serif;
+    color: rgba(0, 0, 0, .8);
+    font-size: .8rem;
+    text-align: right;
+}
+
+#question {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    margin: 10px;
+}
+
+.answer-btn {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+/* change this with media query-min-width 640px----------- */
+#scoreboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* ------------------------------------------------------- */
+
+#scoreboard p {
+    margin: 2.5px 15px;
+    text-align: center;
+}
+
+.big-hero-font {
+    font-size: 2.5rem;
+}
+
+/* The eighties font is REALLY big */
+#next-btn.eighties, #menu-btn.eighties {
+    font-size: 1.25rem;
+}
+
+/* change this with media query-min-width 640px----------- */
+.end-game-controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* ------------------------------------------------------- */
+
+.correct {
+    background-color: rgb(85,136,60);
+    color: white;
+}
+
+.wrong {
+    color: rgb(139, 0, 0);
+}
+
+.no-click {
+    pointer-events: none;
+}
+
+.exit {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(255,255,255, .9);
+    padding: 0 10px;
+    border: 1px solid rgba(0,0,0,.8);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.exit:hover {
+    color: rgb(139, 0, 0);
+    border-color: rgb(139, 0, 0);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,.8);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.exit-window {
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 80vh;
+    z-index: 10;
+}
+
+.card .exit {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+h4 {
+    text-decoration: underline;
+    padding: 5px 0px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    height: 20px;
+    font-size: .75rem;
+    color: white;
+}
+
+footer a {
+    color: white;
+    padding: 0px 5px;
+}
+
+@media screen and (min-width: 640px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 2fr);
+    }
+
+    #scoreboard, .end-game-controls {
+        flex-direction: row;
+    }
+
+    #scoreboard div.card {
+        max-width: 40vw;
+        margin: 10px 5px;
+    }
+
+}
+
+@media screen and (min-width: 1024px) and (min-height: 768px) {
+    .btn{
+        width: 30vw;
+        height: 150px;
+        padding: 40px 25px;
+    }
+
+    .btn.big-font {
+        font-size: 2.2rem;
+    }
+
+    .count {
+        font-size: 1rem;
+    }
+
+    #question {
+        font-size: 1.5rem;
+    }
+
+    #answer-buttons .btn {
+        font-size: 1.5rem;
+    }
+
+    .ctrl-btn {
+        font-size: 2rem;
+    }
+
+    #next-btn.eighties {
+        font-size: 1.8rem
+    }
+}
+
+.hide {
+    display: none;
+}

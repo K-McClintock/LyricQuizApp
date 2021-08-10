@@ -1,55 +1,46 @@
+const howTo = document.querySelector('.how-to');
+const counter = document.querySelector('.count span')
+const quizContainer = document.querySelector('#quiz-container');
+const questionContainer = document.querySelector('#question-container');
+const questionEl = document.querySelector('#question');
+const answerButtonsEl = document.querySelector('#answer-buttons');
+const startButton = document.querySelector('#start-btn');
+const nextButton = document.querySelector('#next-btn');
+const scoreButton = document.querySelector('#score-btn');
+const menuButton = document.querySelector('#menu-btn');
+const tryAgainButton = document.querySelector('#try-again-btn');
+const scoreboards = document.querySelectorAll('.scoreboard');
+const finalScore = document.querySelector('#final-score');
+const ranking = document.querySelector('#ranking');
+const modal = document.querySelector('#modal');
+const exitButton = document.querySelectorAll('.exit');
+const yesButton = document.querySelector('.yes');
+const noButton = document.querySelector('.no');
 
-const startButton = document.querySelector('#start-btn')
-const nextButton = document.querySelector('#next-btn')
-const questionContainerElement =document.querySelector('#question-container')
-const questionElement = document.querySelector('#question')
-const answerButtonsElement = document.querySelector('#answer-buttons')
-const decSelectButton = document.querySelector('#dec-select')
-const scoreSpan = document.querySelector('.score-span')
-const scoreboard = document.querySelector('#scoreboard')
-const finalScore = document.querySelector('#final-score')
-const grade = document.querySelector('#grade')
-const tallyButton = document.querySelector('#tally-btn')
-const showBoard = document.querySelector('#show-board')
-const tryAgain = document.querySelector('#try-btn')
 
 let shuffledQuestions, currentQuestionIndex
 
-/* start of counter test*/ 
 let countRightAnswers = 0
 
-startButton.addEventListener('click', startGame)
-nextButton.addEventListener('click', () => {
-    answerButtonsElement.classList.remove('no-click')
-    currentQuestionIndex++
-    setNextQuestion()
-})
-decSelectButton.addEventListener('click', () => {
-    window.location.replace('decades.html');
-})
-tryAgain.addEventListener('click', () => {
-    window.location.reload();
-});
+let currentCount = 0
 
-function startGame() {
-    console.log('Started')
+
+//start game, hide howTo & startButton, show quiz & questionContainers
+const startGame = () => {
+    howTo.classList.add('hide')
     startButton.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
-    questionContainerElement.classList.remove('hide')
-    setNextQuestion()
-    /*counter stuff again */
     countRightAnswers = 0
+    currentCount = 0
+    quizContainer.classList.remove('hide')
+    questionContainer.classList.remove('hide')
+    setNextQuestion()
 }
 
-function setNextQuestion() {
-    resetState()
-    showQuestion(shuffledQuestions[currentQuestionIndex])
-
-}
-
-function showQuestion(question) {
-    questionElement.innerText = question.question
+//show question, create answer buttons
+const showQuestion = (question) => {
+    questionEl.innerText = question.question
     question.answers.forEach(answer => {
         const button = document.createElement('button')
         button.innerText = answer.text
@@ -58,46 +49,49 @@ function showQuestion(question) {
             button.dataset.correct = answer.correct
         }
         button.addEventListener('click', selectAnswer)
-        answerButtonsElement.appendChild(button)
+        answerButtonsEl.appendChild(button)
     })
 }
 
-function resetState() {
+//hide next button, remove previous answer buttons
+const resetState = () => {
     nextButton.classList.add('hide')
-    while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+    while (answerButtonsEl.firstChild) {
+        answerButtonsEl.removeChild(answerButtonsEl.firstChild)
     }
 }
 
-function selectAnswer(e) {
+//reset state, show next question, increment question number
+const setNextQuestion = () => {
+    resetState()
+    showQuestion(shuffledQuestions[currentQuestionIndex])
+    currentCount ++
+    counter.innerText = currentCount
+}
+
+//select answer, remove hide button, if out of questions show score button
+const selectAnswer = (e) => {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
-    setStatusClass(document.body, correct)
-    Array.from(answerButtonsElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct)
+    Array.from(answerButtonsEl.children).forEach(button => {
+        setStatus(button, button.dataset.correct)
     })
-    if (shuffledQuestions.length > currentQuestionIndex + 1) {
-    nextButton.classList.remove('hide')
+    if (shuffledQuestions.length > currentQuestionIndex + 1){
+        nextButton.classList.remove('hide')
     } else {
-        tallyButton.innerText = 'Tally it up!'
-        tallyButton.classList.remove('hide') 
-        tallyButton.addEventListener('click', talliedUp);
+        scoreButton.innerText = "Score me!"
+        scoreButton.classList.remove('hide')
+        scoreButton.addEventListener('click', scoreMe)
     }
-
-    /*more counter stuff */
-    if (selectedButton.dataset = correct){
-        countRightAnswers++;
+    if (correct) {
+        countRightAnswers++
     }
-    /*counter stuff again again */
-    scoreboard.innerText = countRightAnswers + ' / 10'
-    
-    //prevent multiclicking
-    answerButtonsElement.classList.add('no-click');
-
+    answerButtonsEl.classList.add('no-click')
 }
 
-function setStatusClass(element, correct) {
-    clearStatusClass(element)
+//set status- right answers to correct, wrong answers to wrong
+const setStatus = (element, correct) => {
+    clearStatus(element)
     if (correct) {
         element.classList.add('correct')
     } else {
@@ -105,47 +99,83 @@ function setStatusClass(element, correct) {
     }
 }
 
-function clearStatusClass(element) {
+//clear the status
+const clearStatus = (element) => {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
 
-//remove questions, display score and grade, and display the 'pick another decade' button//
-function talliedUp(){
-    questionContainerElement.classList.add('hide');
-    answerButtonsElement.classList.add('hide');
-    scoreSpan.classList.toggle('hide')
-    tallyButton.classList.add('hide')
-    showBoard.classList.remove('hide')
-    finalScore.innerText = countRightAnswers + ' / 10';
-    if(countRightAnswers == '10'){
-        grade.innerText = 'Legend!'
+//hide the quiz, show the score results, show end game controls
+const scoreMe = () => {
+    quizContainer.classList.add('hide')
+    questionContainer.classList.add('hide')
+    answerButtonsEl.classList.add('hide')
+    scoreButton.classList.add('hide')
+    scoreboards.forEach(scoreboard => {
+        scoreboard.classList.remove('hide')
+    })
+    finalScore.innerText = countRightAnswers + ' / 10'
+    if (countRightAnswers == '10'){
+        ranking.innerText = 'Legend!'
     } else if (countRightAnswers >= '7'){
-        grade.innerText = 'Rock Star!'
+        ranking.innerText = 'Rock Star!'
     } else {
-        grade.innerText = 'Roadie'
+        ranking.innerText = 'Roadie'
     }
-    decSelectButton.innerText = 'Another decade?'
-        decSelectButton.classList.remove('hide');
-    tryAgain.innerText = 'Try Again!'
-    tryAgain.classList.remove('hide')      
+    menuButton.classList.remove('hide')
+    tryAgainButton.classList.remove('hide')
+}
 
-};
+// event listeners
+startButton.addEventListener('click', startGame)
 
+nextButton.addEventListener('click', () => {
+    answerButtonsEl.classList.remove('no-click')
+    currentQuestionIndex++
+    setNextQuestion()
+})
+
+menuButton.addEventListener('click', () => {
+    window.location.replace('menu.html');
+})
+
+tryAgainButton.addEventListener('click', () => {
+    window.location.reload();
+})
+
+exitButton.forEach(exit => {exit.addEventListener('click', () => {
+    modal.classList.toggle('hide')
+})})
+
+window.addEventListener('click', (e) => {
+    if (e.target == modal) {
+        modal.classList.add('hide')
+    }
+})
+
+noButton.addEventListener('click', () => {
+    modal.classList.add('hide')
+})
+
+yesButton.addEventListener('click', () => {
+    window.location.replace('index.html')
+})
+
+// quiz questions and answers
 const questions = [
     {
         question: '"You took for granted all the times I never let you down."',
         answers: [
             {text: '"The Reason" by Hoobastank', correct: false},
             {text: '"Kryptonite" by 3 Doors Down', correct: true},
-            // {text: '" " by ', correct: false},
+            {text: '"Higher" by Creed', correct: false},
             {text: '"How You Remind Me" by Nickleback', correct: false}
         ]
     },
     {
         question: '"When your will is broken, when it slips from your hand."',
         answers: [
-            // {text: '" " by the ', correct: false},
+            {text: '"Just Like A Pill" by Pink', correct: false},
             {text: '"Bleeding Love" by Leona Lewis', correct: false},
             {text: '"Big Girls Don\'t Cry" by Fergie', correct: false},
             {text: '"Say It Right" by Nelly Furtado', correct: true}
@@ -155,7 +185,7 @@ const questions = [
         question: '"We\'ll have it good, we\'ll have the life we knew we would."',
         answers: [
             {text: '"Chasing Cars" by Snow Patrol', correct: false},
-            // {text: '" " by ', correct: false},
+            {text: '"Wonderful" by Everclear', correct: false},
             {text: '"Hey There Delilah" by Plain White T\'s', correct: true},
             {text: '"Only One" by Yellowcard', correct: false}
         ]
@@ -166,13 +196,13 @@ const questions = [
             {text: '"Absolutely (Story of a Girl)" by Nine Days', correct: true},
             {text: '"Everything You Want" by Vertical Horizon', correct: false},
             {text: '"Wherever You Will Go" by The Calling', correct: false},
-            // {text: '" " by ', correct: false}
+            {text: '"Bent" by Matchbox 20', correct: false}
         ]
     },
     {
         question: '"There\'s just too much that time cannot erase."',
         answers: [
-            // {text: '" " by ', correct: false},
+            {text: '"Don\'t Know Why" by Norah Jones', correct: false},
             {text: '"First Cut Is the Deepest" by Sheryl Crow', correct: false},
             {text: '"My Immortal" by Evanescence', correct: true},
             {text: '"My Happy Ending" by Avril Lavigne', correct: false}
@@ -181,7 +211,7 @@ const questions = [
     {
         question: '"Don\'t you worry what their bitter hearts are gonna say."',
         answers: [
-            // {text: '" " by ', correct: false},
+            {text: '"Hanging By A Moment" by Lifehouse', correct: false},
             {text: '"Blurry" by Puddle of Mudd', correct: false},
             {text: '"Drive" by Incubus', correct: false},
             {text: '"The Middle" by Jimmy Eat World', correct: true}
@@ -193,7 +223,7 @@ const questions = [
             {text: '"Game of Love" by Santana feat. Michelle Branch', correct: true},
             {text: '"Smooth" by Santana feat. Rob Thomas', correct: false},
             {text: '"Why Don\'t You & I" by Santana feat. Chad Kroeger', correct: false},
-            // {text: '" " by ', correct: false}
+            {text: '"Maria Maria" by Santana feat. The Product G&B', correct: false}
         ]
     },
     {
@@ -201,16 +231,16 @@ const questions = [
         answers: [
             {text: '"No One" by Alicia Keys', correct: false},
             {text: '"I Try" by Macy Gray', correct: true},
-            // {text: '" " by ', correct: false},
+            {text: '"A Thousand Miles" by Vanessa Carlton', correct: false},
             {text: '"My Life Would Suck Without You" by Kelly Clarkson', correct: false}
         ]
     },
     {
         question: '"You\'re part of my entity, here for infinity."',
         answers: [
-            {text: '"Crazy in love" by Beyonce feat. Jay-Z', correct: false},
+            {text: '"All For You" by Janet Jackson', correct: false},
             {text: '"Umbrella" by Rihanna', correct: true},
-            // {text: '" " by ', correct: false},
+            {text: '"I\'m Like A Bird" by Nelly Furtado', correct: false},
             {text: '"Hung Up" by Madonna', correct: false}
         ]
     },
@@ -218,7 +248,7 @@ const questions = [
         question: '"You know that they say that somethings are better left unsaid."',
         answers: [
             {text: '"Bad Day" by Daniel Powter', correct: false},
-            // {text: '" " by ', correct: false},
+            {text: '"Bye Bye Bye" by \'N Sync', correct: false},
             {text: '"Use Somebody" by Kings of Leon', correct: false},
             {text: '"Cry Me A River" by Justin Timberlake', correct: true}
         ]

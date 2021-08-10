@@ -2,162 +2,113 @@
 <html lang="en">
 
 <head>
-    <title>Lyrics Quiz: The Credits</title>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link href="css/quiz.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="lib/fontawesome/css/all.css"> -->
-    <script src="https://kit.fontawesome.com/ad4b4bec12.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Rammetto+One&family=Roboto:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title>Traversing the Verses: the Credits</title>
 </head>
 
 <body>
-    <div id="container" class="containbg">
-        <nav class="navbar navbar-expand-xs navbar-dark bg-dark sticky-top py-0 txtoutline">
-            <a class="navbar-brand" href="menu.html"><i class="fas fa-music"></i> LT</a>
-            <span class="where">The Credits</span>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <div class="app-container">
+        <header>
+            <div class="brand">
+                <a href="index.html">
+                    <img src="images/TtV-cassette-brand.svg" class="brand">
+                </a>
+            </div>
+            
+            <div></div>
+        </header>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="decades.html">Choose Decade <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="howto.html">How to Play</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="version.html">Version History</a>
+        <main class="center">
+            <div class="credits card">
+                <ul>
+                    <li>Graphics by me, © Kristine McClintock 2020</li>
+                    <li>Thanks to Web Dev Simplified for teaching how to make the first version of this quiz app!</li>
+                    <li>And now the lyric copyrights, but be forewarned it spoils the answers: 
+                        <button id="copy-btn" class="btn">Show those copyrights!</button>
                     </li>
                 </ul>
+            
+                <ul id="lyric-copyright" class="hide">
+                    <li>Paint It Black lyrics © Abkco Music, Inc</li>
+                    <li>We Gotta Get out of This Place lyrics © EMI Music Publishing</li>
+                    <li>Sunshine Of Your Love lyrics © Warner Chappell Music, Inc</li>
+                    <li>No Time lyrics © Sony/ATV Music Publishing LLC, BMG Rights Management</li>
+                    <li>Cara Mia lyrics © Universal Music Publishing Group, Adaken Music Holding LLC</li>
+                    <li>A Whiter Shade of Pale lyrics © Onward Music Limited, T.R.O. Inc.</li>
+                    <li>I Had Too Much to Dream (Last Night) lyrics © Sony/ATV Music Publishing LLC</li>
+                    <li>Things I'd Like to Say lyrics © Sony/ATV Music Publishing LLC, BMG Rights Management, Carlin
+                    America Inc</li>
+                    <li>How Can I Be Sure (Single Version) [Mono] lyrics © Sony/ATV Music Publishing LLC</li>
+                    <li>Lies lyrics © Sony/ATV Music Publishing LLC, Warner Chappell Music, Inc, Universal Music
+                    Publishing Group</li>
+                    <li>Rhiannon lyrics © Kobalt Music Publishing Ltd.</li>
+                    <li>Without You lyrics © Universal Music Corp., Warner/chappell Music Denmark A/s, Llerol Music,
+                    Apple Publishing Ltd., Sunshine Music Publishing, The Estate For Peter William Ham, The Estate
+                    For Thomas Evans, Songs Of Vendetta, Apple Publ Ltd</li>
+                    <li>Can't Get It Out of My Head lyrics © Sony/ATV Music Publishing LLC</li>
+                    <li>Go All the Way lyrics © Round Hill Music Big Loud Songs</li>
+                    <li>It Don’t Come Easy lyrics © BMG Rights Management</li>
+                    <li>Let's Stay Together lyrics © Warner Chappell Music, Inc, Universal Music Publishing Group,
+                    Kobalt Music Publishing Ltd.</li>
+                    <li>Smiling Faces Sometimes lyrics © Sony/ATV Music Publishing LLC</li>
+                    <li>Stairway to Heaven lyrics © Warner Chappell Music, Inc</li>
+                    <li>Love Her Madly lyrics © the Morrison Estate, Ray Manzarek, John Densmore, Robby Krieger</li>
+                    <li>Kodachrome lyrics © Universal Music Publishing Group</li>
+                    <li>Harden My Heart lyrics © Warner Chappell Music, Inc</li>
+                    <li>Our Lips Are Sealed lyrics © Universal Music Publishing Group, Spirit Music Group, BMG Rights
+                    Management</li>
+                    <li>Do You Really Want to Hurt Me lyrics © BMG Rights Management</li>
+                    <li>Electric Blue lyrics © Kobalt Music Publishing Ltd., Universal Music Publishing Group, Downtown
+                    Music Publishing, Songtrust Ave</li>
+                    <li>Is This Love lyrics © Warner Chappell Music, Inc</li>
+                    <li>Rock Steady lyrics © Warner Chappell Music, Inc, BMG Rights Management</li>
+                    <li>Hold Me Now lyrics © Universal Music Publishing Group</li>
+                    <li>Foolish Beat lyrics © Debbie Gibson</li>
+                    <li>If It Isn't Love lyrics © Sony/ATV Music Publishing LLC, Kobalt Music Publishing Ltd.</li>
+                    <li>Oh Sherrie lyrics © Round Hill Music Big Loud Songs, Downtown Music Publishing, BMG Rights
+                    Management, Phosphene Music</li>
+                    <li>Wicked Game lyrics © Warner Chappell Music, Inc, Broma 16</li>
+                    <li>Lullaby lyrics © Warner-tamerlane Publishing Corp., Emi Blackwood Music Inc., Roadieodie Music,
+                    Emi Music Publishing France, Shawn Mullins Pub. Designee, Emi Blackwood Music Inc, Emi Blackwood
+                    Music Inc Obo Roadieodie Music</li>
+                    <li>Low lyrics © Warner Chappell Music, Inc</li>
+                    <li>Wonderwall lyrics © Sony/ATV Music Publishing LLC</li>
+                    <li>One Headlight - Radio Edit lyrics © Warner Chappell Music, Inc</li>
+                    <li>Don't Let Go (Love) lyrics © Warner Chappell Music, Inc, Universal Music Publishing Group, BMG
+                    Rights Management</li>
+                    <li>I Will Remember You lyrics © Sony/ATV Music Publishing LLC, Fox Music, Inc</li>
+                    <li>Come Undone lyrics © Warner Chappell Music, Inc</li>
+                    <li>You Were Meant For Me lyrics © Downtown Music Publishing, BMG Rights Management</li>
+                    <li>Today lyrics © Warner Chappell Music, Inc</li>
+                    <li>A Thousand Years lyrics © Warner Chappell Music, Inc, Kobalt Music Publishing Ltd</li>
+                    <li>Pompeii lyrics © Universal Music Publishing Group</li>
+                    <li>Team lyrics © Peermusic Publishing, Sony/ATV Music Publishing LLC, Kobalt Music Publishing Ltd.</li>
+                    <li>Chandelier lyrics © Sony/ATV Music Publishing LLC</li>
+                    <li>Rolling in the Deep lyrics © Sony/ATV Music Publishing LLC, Universal Music Publishing Group</li>
+                    <li>We Are Young lyrics © Sony/ATV Music Publishing LLC, Warner Chappell Music, Inc</li>
+                    <li>The One That Got Away lyrics © When I'm Rich You'll Be My Bitch, Prescription Songs, Mxm Music Ab, Kasz Money Publishing</li>
+                    <li>I Will Wait lyrics © Sony/ATV Music Publishing LLC, Universal Music Publishing Group</li>
+                    <li>Don't You Worry Child lyrics © Sony/ATV Music Publishing LLC, Universal Music Publishing Group, Kobalt Music Publishing Ltd., BMG Rights Management</li>
+                    <li>All Of Me lyrics © G.O.O.D. Music & Columbia Records</li>
+                    <li>Kryptonite lyrics © Sony/ATV Music Publishing LLC, Universal Music Publishing Group, BMG Rights Management</li>
+                    <li>Say It Right lyrics © Sony/ATV Music Publishing LLC, Warner Chappell Music, Inc, Anthem Entertainment Lp</li>
+                    <li>Hey There Delilah lyrics © Warner Chappell Music, Inc</li>
+                    <li>Absolutely (Story of a Girl) lyrics © 550 Music, Epic Records (?)</li>
+                    <li>My Immortal lyrics © Reservoir Media Management Inc</li>
+                    <li>The Middle lyrics © Kobalt Music Publishing Ltd.</li>
+                    <li>The Game of Love lyrics © Warner Chappell Music, Inc</li>
+                    <li>I Try lyrics © Wixen Music Publishing, BMG Rights Management</li>
+                    <li>Umbrella lyrics © Peermusic Publishing, Sony/ATV Music Publishing LLC, Warner Chappell Music, Inc</li>
+                    <li>Cry Me a River lyrics © Warner Chappell Music, Inc, Universal Music Publishing Group, Kobalt Music Publishing Ltd.</li>
+                </ul>
             </div>
-        </nav>
-
-        <main class="menu-container mt-2 justify-content-center">
-            <div class="row">
-                <div class="col-11 col-lg-8 col-xl-6 m-auto px-0" id="credits">
-
-                    <p>
-                        <ul class="list-unstyled pl-3 pr-2">
-                            <li><span>Photo by <a
-                                href="https://unsplash.com/@black_onion?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Konstantinos
-                                Hasandras</a> on <a
-                                href="https://unsplash.com/s/photos/record?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></li>
-                            <li>Backgrounds in individual decades by me, © Kristine McClintock 2020</li>
-                            <li>Thanks to Web Dev Simplified for teaching how to make a quiz app!</li>
-                            <li>And now the lyric copyrights, but be forewarned it spoils the answers: <button id="btn-copy"
-                                class="btn-primary px-1">Show those copyrights!</button></li>
-                        </ul>
-                    </p>
-                    <p>
-                        <ul id="lyriccopyright"   class="hide pl-3 pr-2">
-                        <li>Paint It Black lyrics © Abkco Music, Inc</li>
-                        <li>We Gotta Get out of This Place lyrics © EMI Music Publishing</li>
-                        <li>Sunshine Of Your Love lyrics © Warner Chappell Music, Inc</li>
-                        <li>No Time lyrics © Sony/ATV Music Publishing LLC, BMG Rights Management</li>
-                        <li>Cara Mia lyrics © Universal Music Publishing Group, Adaken Music Holding LLC</li>
-                        <li>A Whiter Shade of Pale lyrics © Onward Music Limited, T.R.O. Inc.</li>
-                        <li>I Had Too Much to Dream (Last Night) lyrics © Sony/ATV Music Publishing LLC</li>
-                        <li>Things I'd Like to Say lyrics © Sony/ATV Music Publishing LLC, BMG Rights Management, Carlin
-                        America Inc</li>
-                        <li>How Can I Be Sure (Single Version) [Mono] lyrics © Sony/ATV Music Publishing LLC</li>
-                        <li>Lies lyrics © Sony/ATV Music Publishing LLC, Warner Chappell Music, Inc, Universal Music
-                        Publishing Group</li>
-                        <li>Rhiannon lyrics © Kobalt Music Publishing Ltd.</li>
-                        <li>Without You lyrics © Universal Music Corp., Warner/chappell Music Denmark A/s, Llerol Music,
-                        Apple Publishing Ltd., Sunshine Music Publishing, The Estate For Peter William Ham, The Estate
-                        For Thomas Evans, Songs Of Vendetta, Apple Publ Ltd</li>
-                        <li>Can't Get It Out of My Head lyrics © Sony/ATV Music Publishing LLC</li>
-                        <li>Go All the Way lyrics © Round Hill Music Big Loud Songs</li>
-                        <li>It Don’t Come Easy lyrics © BMG Rights Management</li>
-                        <li>Let's Stay Together lyrics © Warner Chappell Music, Inc, Universal Music Publishing Group,
-                        Kobalt Music Publishing Ltd.</li>
-                        <li>Smiling Faces Sometimes lyrics © Sony/ATV Music Publishing LLC</li>
-                        <li>Stairway to Heaven lyrics © Warner Chappell Music, Inc</li>
-                        <li>Love Her Madly lyrics © the Morrison Estate, Ray Manzarek, John Densmore, Robby Krieger</li>
-                        <li>Kodachrome lyrics © Universal Music Publishing Group</li>
-                        <li>Harden My Heart lyrics © Warner Chappell Music, Inc</li>
-                        <li>Our Lips Are Sealed lyrics © Universal Music Publishing Group, Spirit Music Group, BMG Rights
-                        Management</li>
-                        <li>Do You Really Want to Hurt Me lyrics © BMG Rights Management</li>
-                        <li>Electric Blue lyrics © Kobalt Music Publishing Ltd., Universal Music Publishing Group, Downtown
-                        Music Publishing, Songtrust Ave</li>
-                        <li>Is This Love lyrics © Warner Chappell Music, Inc</li>
-                        <li>Rock Steady lyrics © Warner Chappell Music, Inc, BMG Rights Management</li>
-                        <li>Hold Me Now lyrics © Universal Music Publishing Group</li>
-                        <li>Foolish Beat lyrics © Debbie Gibson</li>
-                        <li>If It Isn't Love lyrics © Sony/ATV Music Publishing LLC, Kobalt Music Publishing Ltd.</li>
-                        <li>Oh Sherrie lyrics © Round Hill Music Big Loud Songs, Downtown Music Publishing, BMG Rights
-                        Management, Phosphene Music</li>
-                        <li>Wicked Game lyrics © Warner Chappell Music, Inc, Broma 16</li>
-                        <li>Lullaby lyrics © Warner-tamerlane Publishing Corp., Emi Blackwood Music Inc., Roadieodie Music,
-                        Emi Music Publishing France, Shawn Mullins Pub. Designee, Emi Blackwood Music Inc, Emi Blackwood
-                        Music Inc Obo Roadieodie Music</li>
-                        <li>Low lyrics © Warner Chappell Music, Inc</li>
-                        <li>Wonderwall lyrics © Sony/ATV Music Publishing LLC</li>
-                        <li>One Headlight - Radio Edit lyrics © Warner Chappell Music, Inc</li>
-                        <li>Don't Let Go (Love) lyrics © Warner Chappell Music, Inc, Universal Music Publishing Group, BMG
-                        Rights Management</li>
-                        <li>I Will Remember You lyrics © Sony/ATV Music Publishing LLC, Fox Music, Inc</li>
-                        <li>Come Undone lyrics © Warner Chappell Music, Inc</li>
-                        <li>You Were Meant For Me lyrics © Downtown Music Publishing, BMG Rights Management</li>
-                        <li>Today lyrics © Warner Chappell Music, Inc</li>
-                        <li>A Thousand Years lyrics © Warner Chappell Music, Inc, Kobalt Music Publishing Ltd</li>
-                        <li>Pompeii lyrics © Universal Music Publishing Group</li>
-                        <li>Team lyrics © Peermusic Publishing, Sony/ATV Music Publishing LLC, Kobalt Music Publishing Ltd.</li>
-                        <li>Chandelier lyrics © Sony/ATV Music Publishing LLC</li>
-                        <li>Rolling in the Deep lyrics © Sony/ATV Music Publishing LLC, Universal Music Publishing Group</li>
-                        <li>We Are Young lyrics © Sony/ATV Music Publishing LLC, Warner Chappell Music, Inc</li>
-                        <li>The One That Got Away lyrics © When I'm Rich You'll Be My Bitch, Prescription Songs, Mxm Music Ab, Kasz Money Publishing</li>
-                        <li>I Will Wait lyrics © Sony/ATV Music Publishing LLC, Universal Music Publishing Group</li>
-                        <li>Don't You Worry Child lyrics © Sony/ATV Music Publishing LLC, Universal Music Publishing Group, Kobalt Music Publishing Ltd., BMG Rights Management</li>
-                        <li>All Of Me lyrics © G.O.O.D. Music & Columbia Records</li>
-                        <li>Kryptonite lyrics © Sony/ATV Music Publishing LLC, Universal Music Publishing Group, BMG Rights Management</li>
-                        <li>Say It Right lyrics © Sony/ATV Music Publishing LLC, Warner Chappell Music, Inc, Anthem Entertainment Lp</li>
-                        <li>Hey There Delilah lyrics © Warner Chappell Music, Inc</li>
-                        <li>Absolutely (Story of a Girl) lyrics © 550 Music, Epic Records (?)</li>
-                        <li>My Immortal lyrics © Reservoir Media Management Inc</li>
-                        <li>The Middle lyrics © Kobalt Music Publishing Ltd.</li>
-                        <li>The Game of Love lyrics © Warner Chappell Music, Inc</li>
-                        <li>I Try lyrics © Wixen Music Publishing, BMG Rights Management</li>
-                        <li>Umbrella lyrics © Peermusic Publishing, Sony/ATV Music Publishing LLC, Warner Chappell Music, Inc</li>
-                        <li>Cry Me a River lyrics © Warner Chappell Music, Inc, Universal Music Publishing Group, Kobalt Music Publishing Ltd.</li>
-                    </ul>
-
-                        <!-- White Rabbit lyrics © Universal Music Publishing Group<br>
-                    Paint It Black lyrics © Abkco Music, Inc<br>
-                    Purple Haze lyrics © Experience Hendrix Llc, Experience Hendrix Llc.<br>
-                    Break On Through lyrics ©  the Morrison estate, Ray Manzarek, John Densmore, Robby Krieger<br>
-                    Magic Carpet Ride lyrics © Sony/ATV Music Publishing LLC, Universal Music Publishing Group, BMG Rights Management<br>
-                    We Gotta Get out of This Place lyrics © EMI Music Publishing<br>
-                    Heartful of Soul (Sitar) lyrics © Sony/ATV Music Publishing LLC<br>
-                    Sunshine Of Your Love lyrics © Warner Chappell Music, Inc<br>
-                    Layla lyrics © Warner Chappell Music, Inc<br>
-                    No Time lyrics © Sony/ATV Music Publishing LLC, BMG Rights Management<br>
-                    California Dreamin' lyrics © Universal Music Publishing Group, Sony/ATV Music Publishing LLC<br>
-                    Spinning Wheel lyrics © Sony/ATV Music Publishing LLC<br>
-                    You Were On My Mind lyrics © Warner Chappell Music, Inc<br> -->
-
-                    </p>
-                </div>
         </main>
+        <footer></footer>
     </div>
-    <script src="scripts/quiz.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
+    
+        <script src="scripts/index.js"></script>
 </body>
-
 </html>

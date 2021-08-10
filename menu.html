@@ -3,42 +3,50 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lyric Quiz: Menu</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/quiz.css">
-    <!-- <link rel="stylesheet" href="lib/fontawesome/css/all.css"> -->
-    <script src="https://kit.fontawesome.com/ad4b4bec12.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Rammetto+One&family=Roboto:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title>Traversing the Verses: Menu</title>
 </head>
 
 <body>
-    <div id="container" class="containbg">
+    <div class="app-container">
+        <header>
+            <div class="brand">
+                <a href="index.html">
+                    <img src="images/TtV-cassette-brand.svg" class="brand">
+                </a>
+            </div>
+            
+            <div></div>
+        </header>
 
-        <main id="menu" class="menu-container mt-5 justify-content-center">
-            <div class="row">
-                <div class="col-11 col-lg-8 col-xl-6 m-auto px-0">
-                    <a href="decades.html" class="btn btn-success btn-lg btn-block txtoutline" id="bigMenu">Start Game</a>
-                    <a href="howto.html" class="btn btn-primary btn-block mt-1 txtoutline">How To Play</button>
-                    <!-- <a href="#" class="btn btn-primary btn-block mt-1 txtoutline" disabled>Options (Coming soon!)</button> -->
-                    <a href="credits.html" class="btn btn-primary btn-block mt-1 txtoutline">Credits</a>
-                    <a href="version.html" class="btn btn-primary btn-block mt-1 txtoutline">Version History</a>
-                </div>
+        <main class="center">
+            <div class="card how-to">Pick a decade and test your lyrical knowledge!</div>
+            <div class="menu-grid">
+                <a href="sixties.html">
+                    <div class="btn big-font sixties sixties-BG">the 1960's</div>
+                </a>
+                <a href="seventies.html">
+                    <div class="btn big-font seventies seventies-BG">the 1970's</div>
+                </a>
+                <a href="eighties.html">
+                    <div class="btn big-font eighties eighties-BG">the 1980's</div>
+                </a>
+                <a href="nineties.html">
+                    <div class="btn big-font nineties nineties-BG"><span>the</span> 1990's</div>
+                </a>
+                <a href="aughts.html">
+                    <div class="btn big-font aughts aughts-BG">the 2000's</div>
+                </a>
+                <a href="tens.html">
+                    <div class="btn big-font tens tens-BG">the 2010's</div>
+                </a>
             </div>
         </main>
+        <footer></footer>
+        
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
+    
 </body>
-
 </html>
